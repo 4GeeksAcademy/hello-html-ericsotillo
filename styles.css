@@ -1,0 +1,336 @@
+/* Variables */
+:root {
+  --color-fondo: #14121F; /* Fondo principal */
+  --color-fondo-alt: #1F1C2E; /* Fondo de secciones alternas y tarjetas */
+  --color-texto: #F4EFE6; /* Texto principal */
+  --color-texto-suave: #B9B3C7; /* Texto secundario */
+  --color-acento: #E8A33D;
+  --color-linea: rgba(185, 179, 199, 0.3); /* Separadores */
+
+  --fuente-titulos: "Gloock", Georgia, "Times New Roman", serif;
+  --fuente-texto: "Red Hat Text", "Segoe UI", system-ui, sans-serif;
+
+  --ancho-max: 72rem;
+  --margen-lateral: max(1.25rem, calc((100% - var(--ancho-max)) / 2));
+  --alto-cabecera: 6.5rem;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--alto-cabecera);
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-acento);
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+li {
+  list-style-type: none;
+  color: var(--color-acento);
+}
+
+/* Componentes */
+.boton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--color-acento);
+  border-radius: 999px;
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.boton:hover {
+  background-color: transparent;
+  color: var(--color-acento);
+}
+
+.boton--borde {
+  background-color: transparent;
+  color: var(--color-acento);
+}
+
+.boton--borde:hover {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Cabecera */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 1rem;
+  background-color: rgba(20, 18, 31, 0.94);
+  border-bottom: 1px solid rgba(232, 163, 61, 0.25);
+}
+
+.cabecera__marca img {
+  width: auto;
+  height: 2.5rem;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.menu a {
+  display: block;
+  padding-block: 0.35rem;
+  border-bottom: 2px solid transparent;
+  color: var(--color-texto);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  border-bottom-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+/* Secciones: alto de pantalla y margen lateral */
+.seccion {
+  min-height: 100svh;
+  padding: clamp(4rem, 10vh, 7rem) var(--margen-lateral);
+}
+
+.seccion h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+}
+
+/* Portada */
+.portada {
+  display: grid;
+  grid-template-rows: minmax(6rem, 1fr) auto;
+  min-height: calc(100svh - var(--alto-cabecera));
+  background:
+    linear-gradient(to bottom, rgba(20, 18, 31, 0.6), rgba(20, 18, 31, 0.3) 45%),
+    url("img/nilo-sur-portada.jpg") center 30% / cover no-repeat;
+}
+
+.portada__texto {
+  grid-row: 2;
+  padding: 2rem var(--margen-lateral) 3rem;
+  border-top: 2px solid var(--color-acento);
+  background-color: var(--color-fondo-alt);
+}
+
+.portada h1 {
+  font-size: clamp(4rem, 13vw, 9rem);
+  line-height: 0.9;
+}
+
+.portada__lema {
+  margin-top: 0.75rem;
+  color: var(--color-acento);
+  font-family: var(--fuente-titulos);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.portada__intro {
+  max-width: 34ch;
+  margin: 0.75rem 0 1.75rem;
+  color: var(--color-texto-suave);
+}
+
+/* Sobre mí */
+.sobre-mi {
+  display: grid;
+  align-content: center;
+  gap: 2.5rem;
+  background-color: var(--color-fondo-alt);
+}
+
+.sobre-mi__foto {
+  margin: 0;
+}
+
+.sobre-mi__foto img {
+  width: 100%;
+  max-width: 16rem;
+  max-height: 60svh;
+  object-fit: cover;
+  border-radius: 999px 999px 0.5rem 0.5rem;
+}
+
+.sobre-mi__texto p {
+  max-width: 60ch;
+}
+
+.sobre-mi__texto p + p {
+  margin-top: 1rem;
+}
+
+/* Escritorio: foto a la izquierda, texto a la derecha */
+@media (min-width: 48rem) {
+  .sobre-mi {
+    grid-template-columns: 16rem 1fr;
+    align-items: center;
+    gap: 3.5rem;
+  }
+}
+
+/* Trayectoria */
+.linea {
+  padding: 0;
+}
+
+.linea__hito + .linea__hito {
+  margin-top: 2rem;
+}
+
+.linea__hito p {
+  max-width: 60ch;
+  color: var(--color-texto);
+}
+
+.linea__imagen {
+  max-width: 16rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Presentaciones */
+.presentaciones {
+  display: grid;
+  align-content: center;
+  background:
+    linear-gradient(rgba(20, 18, 31, 0.9), rgba(20, 18, 31, 0.95)),
+    url("img/presentaciones-publico.jpg") center / cover no-repeat;
+}
+
+.cartel {
+  padding: 0;
+  border-top: 1px solid var(--color-linea);
+}
+
+.concierto {
+  display: grid;
+  gap: 0.75rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.concierto__fecha {
+  color: var(--color-texto-suave);
+  font-weight: 500;
+}
+
+.concierto__dia {
+  margin-right: 0.25rem;
+  color: var(--color-acento);
+  font-family: var(--fuente-titulos);
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.concierto h3 {
+  color: var(--color-texto);
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.concierto cite {
+  font-style: normal;
+}
+
+.concierto__info p {
+  margin-top: 0.25rem;
+  color: var(--color-texto-suave);
+}
+
+.concierto .boton {
+  justify-self: start;
+}
+
+/* Pie de página */
+.pie {
+  display: grid;
+  gap: 2.5rem;
+  padding: 4rem var(--margen-lateral) 2rem;
+  border-top: 2px solid var(--color-acento);
+  background:
+    linear-gradient(rgba(20, 18, 31, 0.9), rgba(20, 18, 31, 0.96)),
+    url("img/guitarra-detalle.jpg") center / cover no-repeat;
+}
+
+.pie__contacto img {
+  width: 14rem;
+}
+
+.pie h2 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.75rem;
+}
+
+.pie address {
+  font-style: normal;
+}
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding: 0;
+}
