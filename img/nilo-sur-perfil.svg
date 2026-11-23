@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-labelledby="perfil-title">
+  <title id="perfil-title">Caricatura de Nilo Sur Trío: Clara Benet con el contrabajo, Nilo Sur con la guitarra e Iván Roca con el cajón</title>
+  <defs>
+    <clipPath id="marco">
+      <rect width="600" height="400" rx="24"/>
+    </clipPath>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14121F"/>
+      <stop offset="0.6" stop-color="#4A2C3A"/>
+      <stop offset="1" stop-color="#B8582B"/>
+    </linearGradient>
+    <radialGradient id="sol" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFD58A"/>
+      <stop offset="0.7" stop-color="#E8A33D"/>
+      <stop offset="1" stop-color="#E8A33D" stop-opacity="0"/>
+    </radialGradient>
+    <g id="nota">
+      <ellipse cx="0" cy="0" rx="7" ry="5" transform="rotate(-20)"/>
+      <rect x="5" y="-26" width="2.5" height="26"/>
+      <path d="M7.5 -26 q10 4 8 14 q-2 -6 -8 -7 z"/>
+    </g>
+  </defs>
+
+  <g clip-path="url(#marco)">
+    <!-- Escenario -->
+    <rect width="600" height="400" fill="url(#cielo)"/>
+    <circle cx="300" cy="230" r="170" fill="url(#sol)" opacity="0.9"/>
+    <rect y="345" width="600" height="55" fill="#1F1C2E"/>
+    <line x1="0" y1="345" x2="600" y2="345" stroke="#E8A33D" stroke-width="2"/>
+    <g fill="#E8A33D" opacity="0.85">
+      <use href="#nota" transform="translate(60 80)"/>
+      <use href="#nota" transform="translate(220 60) scale(0.8)"/>
+      <use href="#nota" transform="translate(390 70) scale(0.9)"/>
+      <use href="#nota" transform="translate(560 110) scale(0.7)"/>
+    </g>
+
+    <!-- ===== Clara Benet (contrabajo) ===== -->
+    <g id="clara">
+      <rect x="100" y="352" width="10" height="20" fill="#F1C6A5"/>
+      <rect x="130" y="352" width="10" height="20" fill="#F1C6A5"/>
+      <ellipse cx="103" cy="376" rx="14" ry="6" fill="#14121F"/>
+      <ellipse cx="137" cy="376" rx="14" ry="6" fill="#14121F"/>
+      <path d="M78 360 Q76 238 120 226 Q164 238 162 360 Z" fill="#2F5D50"/>
+      <rect x="112" y="205" width="16" height="26" fill="#F1C6A5"/>
+      <!-- pelo (detrás) -->
+      <path d="M70 172 Q66 104 120 100 Q174 104 170 172 L172 212 Q152 210 150 192 L90 192 Q88 210 68 212 Z" fill="#B5482B"/>
+      <ellipse cx="120" cy="165" rx="46" ry="50" fill="#F1C6A5"/>
+      <!-- flequillo -->
+      <path d="M74 152 Q78 106 120 104 Q162 106 166 152 Q146 130 128 140 Q118 124 104 138 Q92 128 74 152 Z" fill="#B5482B"/>
+      <circle cx="76" cy="190" r="4" fill="#E8A33D"/>
+      <circle cx="164" cy="190" r="4" fill="#E8A33D"/>
+      <g stroke="#5A3A2E" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M94 150 Q104 144 114 150"/>
+        <path d="M126 150 Q136 144 146 150"/>
+      </g>
+      <ellipse cx="104" cy="166" rx="9" ry="11" fill="#FFFFFF"/>
+      <ellipse cx="136" cy="166" rx="9" ry="11" fill="#FFFFFF"/>
+      <circle cx="107" cy="168" r="4.5" fill="#14121F"/>
+      <circle cx="139" cy="168" r="4.5" fill="#14121F"/>
+      <circle cx="108.5" cy="166" r="1.5" fill="#FFFFFF"/>
+      <circle cx="140.5" cy="166" r="1.5" fill="#FFFFFF"/>
+      <path d="M121 172 Q128 184 119 186" stroke="#C98F6E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="94" cy="184" r="7" fill="#E07A5F" opacity="0.45"/>
+      <circle cx="146" cy="184" r="7" fill="#E07A5F" opacity="0.45"/>
+      <path d="M106 194 Q120 208 134 194 Q120 200 106 194 Z" fill="#B5482B"/>
+    </g>
+
+    <!-- Contrabajo -->
+    <g id="contrabajo">
+      <line x1="178" y1="350" x2="178" y2="378" stroke="#14121F" stroke-width="3"/>
+      <ellipse cx="178" cy="312" rx="40" ry="42" fill="#8B4A23" stroke="#4A2410" stroke-width="3"/>
+      <ellipse cx="178" cy="258" rx="30" ry="30" fill="#8B4A23" stroke="#4A2410" stroke-width="3"/>
+      <ellipse cx="178" cy="285" rx="24" ry="10" fill="#8B4A23"/>
+      <g stroke="#2A1A12" stroke-width="2.5" fill="none" stroke-linecap="round">
+        <path d="M160 280 q-6 12 0 26"/>
+        <path d="M196 280 q6 12 0 26"/>
+      </g>
+      <rect x="166" y="300" width="24" height="5" fill="#2A1A12"/>
+      <rect x="173" y="110" width="10" height="150" fill="#2A1A12"/>
+      <circle cx="178" cy="104" r="9" fill="#2A1A12"/>
+      <g stroke="#F4EFE6" stroke-width="0.7">
+        <line x1="175" y1="115" x2="175" y2="302"/>
+        <line x1="177" y1="115" x2="177" y2="302"/>
+        <line x1="179" y1="115" x2="179" y2="302"/>
+        <line x1="181" y1="115" x2="181" y2="302"/>
+      </g>
+    </g>
+    <!-- brazos de Clara -->
+    <g stroke="#F1C6A5" stroke-width="12" stroke-linecap="round" fill="none">
+      <path d="M142 250 Q170 230 172 196"/>
+      <path d="M98 255 Q120 300 160 296"/>
+    </g>
+    <circle cx="174" cy="192" r="8" fill="#F1C6A5"/>
+    <circle cx="163" cy="296" r="8" fill="#F1C6A5"/>
+
+    <!-- ===== Nilo Sur (guitarra) ===== -->
+    <g id="nilo">
+      <g stroke="#3A2E2A" stroke-width="5" stroke-linecap="round">
+        <line x1="272" y1="330" x2="262" y2="374"/>
+        <line x1="328" y1="330" x2="338" y2="374"/>
+      </g>
+      <rect x="262" y="322" width="76" height="10" rx="4" fill="#3A2E2A"/>
+      <rect x="274" y="300" width="22" height="72" rx="8" fill="#2B2740"/>
+      <rect x="304" y="300" width="22" height="72" rx="8" fill="#2B2740"/>
+      <ellipse cx="283" cy="375" rx="16" ry="7" fill="#14121F"/>
+      <ellipse cx="317" cy="375" rx="16" ry="7" fill="#14121F"/>
+      <path d="M260 306 Q258 230 300 222 Q342 230 340 306 Z" fill="#F4EFE6"/>
+      <rect x="290" y="204" width="20" height="24" fill="#C68B59"/>
+      <path d="M289 224 L300 248 L311 224 Z" fill="#C68B59"/>
+      <circle cx="248" cy="166" r="10" fill="#C68B59"/>
+      <circle cx="352" cy="166" r="10" fill="#C68B59"/>
+      <ellipse cx="300" cy="160" rx="52" ry="56" fill="#C68B59"/>
+      <!-- pelo rizado -->
+      <g fill="#2B1B12">
+        <circle cx="256" cy="130" r="18"/><circle cx="274" cy="110" r="20"/>
+        <circle cx="300" cy="100" r="22"/><circle cx="326" cy="110" r="20"/>
+        <circle cx="344" cy="130" r="18"/><circle cx="250" cy="150" r="12"/>
+        <circle cx="350" cy="150" r="12"/><circle cx="288" cy="120" r="12"/>
+        <circle cx="312" cy="120" r="12"/>
+      </g>
+      <!-- barba -->
+      <path d="M250 168 Q252 232 300 234 Q348 232 350 168 Q344 204 300 208 Q256 204 250 168 Z" fill="#2B1B12"/>
+      <g stroke="#2B1B12" stroke-width="5" stroke-linecap="round" fill="none">
+        <path d="M268 138 Q280 130 292 138"/>
+        <path d="M308 138 Q320 130 332 138"/>
+      </g>
+      <ellipse cx="280" cy="155" rx="10" ry="12" fill="#FFFFFF"/>
+      <ellipse cx="320" cy="155" rx="10" ry="12" fill="#FFFFFF"/>
+      <circle cx="282" cy="157" r="5" fill="#14121F"/>
+      <circle cx="322" cy="157" r="5" fill="#14121F"/>
+      <circle cx="284" cy="155" r="1.6" fill="#FFFFFF"/>
+      <circle cx="324" cy="155" r="1.6" fill="#FFFFFF"/>
+      <path d="M299 156 Q316 178 302 184 Q290 186 290 178" fill="#A8703F"/>
+      <circle cx="266" cy="178" r="7" fill="#E07A5F" opacity="0.4"/>
+      <circle cx="334" cy="178" r="7" fill="#E07A5F" opacity="0.4"/>
+      <path d="M282 192 Q300 212 318 192 Z" fill="#5A1F1F"/>
+      <path d="M284 192 L316 192 L314 197 L286 197 Z" fill="#FFFFFF"/>
+      <path d="M276 189 Q288 180 300 188 Q312 180 324 189 Q312 194 300 191 Q288 194 276 189 Z" fill="#2B1B12"/>
+    </g>
+
+    <!-- Guitarra -->
+    <g transform="rotate(-25 290 295)">
+      <rect x="345" y="289" width="72" height="12" fill="#3A2318"/>
+      <rect x="415" y="284" width="24" height="22" rx="3" fill="#3A2318"/>
+      <g fill="#E8A33D">
+        <circle cx="421" cy="282" r="3"/><circle cx="431" cy="282" r="3"/>
+        <circle cx="421" cy="308" r="3"/><circle cx="431" cy="308" r="3"/>
+      </g>
+      <ellipse cx="270" cy="295" rx="40" ry="32" fill="#C8742E" stroke="#6B3A1A" stroke-width="3"/>
+      <ellipse cx="320" cy="295" rx="30" ry="25" fill="#C8742E" stroke="#6B3A1A" stroke-width="3"/>
+      <ellipse cx="295" cy="295" rx="12" ry="20" fill="#C8742E"/>
+      <circle cx="303" cy="295" r="9" fill="#14121F"/>
+      <rect x="252" y="287" width="6" height="16" fill="#6B3A1A"/>
+      <g stroke="#F4EFE6" stroke-width="0.7">
+        <line x1="255" y1="291" x2="430" y2="291"/>
+        <line x1="255" y1="295" x2="430" y2="295"/>
+        <line x1="255" y1="299" x2="430" y2="299"/>
+      </g>
+    </g>
+    <!-- brazos de Nilo -->
+    <g stroke="#F4EFE6" stroke-width="16" stroke-linecap="round" fill="none">
+      <path d="M268 242 Q250 270 268 296"/>
+      <path d="M334 242 Q352 262 360 262"/>
+    </g>
+    <circle cx="272" cy="300" r="9" fill="#C68B59"/>
+    <circle cx="368" cy="259" r="9" fill="#C68B59"/>
+
+    <!-- ===== Iván Roca (cajón) ===== -->
+    <g id="ivan">
+      <rect x="450" y="285" width="76" height="90" rx="4" fill="#A8652F" stroke="#5C3317" stroke-width="3"/>
+      <rect x="458" y="294" width="60" height="72" rx="2" fill="#C27A3E"/>
+      <g fill="#5C3317">
+        <circle cx="463" cy="299" r="2"/><circle cx="513" cy="299" r="2"/>
+        <circle cx="463" cy="361" r="2"/><circle cx="513" cy="361" r="2"/>
+      </g>
+      <rect x="436" y="288" width="20" height="82" rx="8" fill="#2B2740"/>
+      <rect x="520" y="288" width="20" height="82" rx="8" fill="#2B2740"/>
+      <ellipse cx="444" cy="375" rx="15" ry="7" fill="#14121F"/>
+      <ellipse cx="532" cy="375" rx="15" ry="7" fill="#14121F"/>
+      <path d="M450 292 Q448 222 490 214 Q532 222 530 292 Z" fill="#E8A33D"/>
+      <path d="M478 216 L490 236 L502 216 Z" fill="#8D5524"/>
+      <rect x="481" y="196" width="18" height="22" fill="#8D5524"/>
+      <circle cx="442" cy="160" r="10" fill="#8D5524"/>
+      <circle cx="538" cy="160" r="10" fill="#8D5524"/>
+      <ellipse cx="490" cy="155" rx="48" ry="52" fill="#8D5524"/>
+      <ellipse cx="472" cy="120" rx="13" ry="6" fill="#FFFFFF" opacity="0.25" transform="rotate(-20 472 120)"/>
+      <g stroke="#1A1110" stroke-width="5" stroke-linecap="round" fill="none">
+        <path d="M458 130 Q472 122 484 130"/>
+        <path d="M496 130 Q508 122 522 130"/>
+      </g>
+      <circle cx="472" cy="152" r="14" fill="#FFFFFF" fill-opacity="0.85" stroke="#14121F" stroke-width="3"/>
+      <circle cx="508" cy="152" r="14" fill="#FFFFFF" fill-opacity="0.85" stroke="#14121F" stroke-width="3"/>
+      <line x1="486" y1="152" x2="494" y2="152" stroke="#14121F" stroke-width="3"/>
+      <circle cx="474" cy="154" r="5" fill="#14121F"/>
+      <circle cx="510" cy="154" r="5" fill="#14121F"/>
+      <ellipse cx="490" cy="172" rx="10" ry="7" fill="#6E4019"/>
+      <path d="M466 184 Q490 210 514 184 Z" fill="#5A1F1F"/>
+      <path d="M468 184 L512 184 L509 190 L471 190 Z" fill="#FFFFFF"/>
+      <path d="M478 200 Q490 214 502 200 Q490 206 478 200 Z" fill="#1A1110"/>
+    </g>
+    <!-- brazos de Iván -->
+    <g stroke="#8D5524" stroke-width="13" stroke-linecap="round" fill="none">
+      <path d="M458 236 Q446 260 462 280"/>
+      <path d="M522 236 Q534 260 518 280"/>
+    </g>
+    <ellipse cx="464" cy="287" rx="11" ry="7" fill="#8D5524"/>
+    <ellipse cx="516" cy="287" rx="11" ry="7" fill="#8D5524"/>
+    <g stroke="#FFD58A" stroke-width="2" stroke-linecap="round" fill="none">
+      <path d="M446 270 q-6 6 0 12"/>
+      <path d="M534 270 q6 6 0 12"/>
+    </g>
+
+    <!-- Nombres -->
+    <g font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2" fill="#E8A33D" text-anchor="middle">
+      <text x="140" y="395">CLARA</text>
+      <text x="300" y="395">NILO</text>
+      <text x="488" y="395">IVÁN</text>
+    </g>
+  </g>
+  <rect x="2" y="2" width="596" height="396" rx="23" fill="none" stroke="#E8A33D" stroke-width="4"/>
+</svg>

@@ -1,0 +1,516 @@
+/* ==========================================================
+   Nilo Sur - hoja de estilos
+   Mobile first. Paleta y tipografía según projectbrief.md
+   ========================================================== */
+
+:root {
+  --color-fondo: #14121F;
+  --color-fondo-alt: #1F1C2E;
+  --color-texto: #F4EFE6;
+  --color-texto-suave: #B9B3C7;
+  --color-acento: #E8A33D;
+  --color-linea: rgba(185, 179, 199, 0.3);
+
+  --fuente-titulos: "Gloock", Georgia, "Times New Roman", serif;
+  --fuente-texto: "Red Hat Text", "Segoe UI", system-ui, sans-serif;
+
+  --ancho-max: 72rem;
+  --margen-lateral: max(1.25rem, calc((100% - var(--ancho-max)) / 2));
+  --alto-cabecera: 6.5rem;
+}
+
+/* ---------- Reset básico ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--alto-cabecera);
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-acento);
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+/* ---------- Accesibilidad ---------- */
+
+.saltar {
+  position: absolute;
+  top: -5rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  font-weight: 700;
+}
+
+.saltar:focus {
+  top: 1rem;
+}
+
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Botones ---------- */
+
+.boton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--color-acento);
+  border-radius: 999px;
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.boton:hover {
+  background-color: transparent;
+  color: var(--color-acento);
+}
+
+.boton--borde {
+  background-color: transparent;
+  color: var(--color-acento);
+}
+
+.boton--borde:hover {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+/* ---------- Cabecera y navegación ---------- */
+
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 1rem;
+  background-color: rgba(20, 18, 31, 0.94);
+  border-bottom: 1px solid rgba(232, 163, 61, 0.25);
+}
+
+.cabecera__marca img {
+  width: auto;
+  height: 2.5rem;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+.menu a {
+  display: block;
+  padding-block: 0.35rem;
+  border-bottom: 2px solid transparent;
+  color: var(--color-texto);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  border-bottom-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+/* ---------- Secciones (cada una ocupa una pantalla) ---------- */
+
+.seccion {
+  min-height: 100svh;
+  padding: clamp(4rem, 10vh, 7rem) var(--margen-lateral);
+}
+
+.seccion h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+}
+
+/* ---------- Portada: el sol que se pone en el mar ----------
+   El mar es el fondo del bloque de texto, así el horizonte
+   siempre queda justo encima del título, con cualquier zoom. */
+
+.portada {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: minmax(6rem, 1fr) auto;
+  min-height: calc(100svh - var(--alto-cabecera));
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(20, 18, 31, 0.6), rgba(20, 18, 31, 0.3) 45%),
+    url("img/nilo-sur-portada.jpg") center 30% / cover no-repeat;
+}
+
+/* Mar */
+.portada__texto {
+  position: relative;
+  grid-row: 2;
+  padding: 1.75rem var(--margen-lateral) clamp(2rem, 7vh, 4.5rem);
+  border-top: 2px solid var(--color-acento);
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 1.4rem, rgba(232, 163, 61, 0.14) 1.4rem 1.5rem),
+    linear-gradient(to bottom, var(--color-fondo-alt), var(--color-fondo));
+}
+
+/* Sol: apoyado en el horizonte; el mar tapa su mitad inferior */
+.portada__texto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 8%;
+  z-index: -1;
+  width: min(40vw, 26rem, 50svh);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #FFD58A, var(--color-acento) 55%, #C9661F);
+  transform: translateY(-50%);
+}
+
+.portada__texto > * {
+  max-width: 40rem;
+}
+
+.portada h1 {
+  font-size: clamp(4rem, 13vw, 9rem);
+  line-height: 0.9;
+}
+
+.portada__lema {
+  margin-top: 0.75rem;
+  color: var(--color-acento);
+  font-family: var(--fuente-titulos);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.portada__intro {
+  max-width: 34ch;
+  margin: 0.75rem 0 1.75rem;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- Sobre mí ---------- */
+
+.sobre-mi {
+  display: grid;
+  align-content: center;
+  gap: 2.5rem;
+  background-color: var(--color-fondo-alt);
+}
+
+.sobre-mi__foto img {
+  width: 100%;
+  max-width: 22rem;
+  max-height: 70svh;
+  object-fit: cover;
+  border-radius: 999px 999px 0.5rem 0.5rem;
+}
+
+.sobre-mi__texto p {
+  max-width: 60ch;
+}
+
+.sobre-mi__texto p + p {
+  margin-top: 1rem;
+}
+
+/* ---------- Trayectoria: línea de tiempo ---------- */
+
+.trayectoria {
+  display: grid;
+  align-content: center;
+}
+
+.linea {
+  max-width: 52rem;
+  margin-left: 0.5rem;
+  padding: 0;
+  border-left: 2px solid rgba(232, 163, 61, 0.5);
+  list-style: none;
+}
+
+.linea__hito {
+  position: relative;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0 0 2rem 2rem;
+}
+
+.linea__hito:last-child {
+  padding-bottom: 0;
+}
+
+.linea__hito::before {
+  content: "";
+  position: absolute;
+  top: 0.3rem;
+  left: calc(-0.5rem - 1px);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--color-acento);
+  border-radius: 50%;
+  background-color: var(--color-fondo);
+}
+
+.linea__anio {
+  color: var(--color-acento);
+  font-family: var(--fuente-titulos);
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.linea__hito p {
+  max-width: 50ch;
+}
+
+.linea__imagen {
+  width: 8rem;
+  margin-top: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.linea__imagen--ancha {
+  width: 12rem;
+}
+
+/* ---------- Próximas presentaciones: cartel ---------- */
+
+.presentaciones {
+  display: grid;
+  align-content: center;
+  background:
+    linear-gradient(rgba(20, 18, 31, 0.9), rgba(20, 18, 31, 0.95)),
+    url("img/presentaciones-publico.jpg") center / cover no-repeat;
+}
+
+.cartel {
+  padding: 0;
+  border-top: 1px solid var(--color-linea);
+  list-style: none;
+}
+
+.concierto {
+  display: grid;
+  gap: 0.75rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.concierto__fecha {
+  color: var(--color-texto-suave);
+  font-weight: 500;
+}
+
+.concierto__dia {
+  margin-right: 0.25rem;
+  color: var(--color-acento);
+  font-family: var(--fuente-titulos);
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.concierto h3 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.concierto cite {
+  font-style: normal;
+}
+
+.concierto__info p {
+  margin-top: 0.25rem;
+  color: var(--color-texto-suave);
+}
+
+.concierto .boton {
+  justify-self: start;
+}
+
+/* ---------- Pie de página ---------- */
+
+.pie {
+  display: grid;
+  gap: 2.5rem;
+  padding: 4rem var(--margen-lateral) 2rem;
+  border-top: 2px solid var(--color-acento);
+  background:
+    linear-gradient(rgba(20, 18, 31, 0.9), rgba(20, 18, 31, 0.96)),
+    url("img/guitarra-detalle.jpg") center / cover no-repeat;
+}
+
+.pie__contacto img {
+  width: 14rem;
+}
+
+.pie h2 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.75rem;
+}
+
+.pie address {
+  font-style: normal;
+}
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.pie__creditos {
+  align-self: end;
+  color: var(--color-texto-suave);
+  font-size: 0.875rem;
+}
+
+.pie__creditos a {
+  color: var(--color-texto-suave);
+}
+
+.pie__creditos p + p {
+  margin-top: 1rem;
+}
+
+/* ---------- Tablet y escritorio ---------- */
+
+@media (min-width: 48rem) {
+  :root {
+    --alto-cabecera: 4.5rem;
+  }
+
+  .cabecera {
+    flex-direction: row;
+    justify-content: space-between;
+    height: var(--alto-cabecera);
+    padding-inline: var(--margen-lateral);
+  }
+
+  .menu {
+    gap: 2.25rem;
+    font-size: 1rem;
+  }
+
+  .sobre-mi {
+    grid-template-columns: minmax(16rem, 24rem) 1fr;
+    align-items: center;
+    gap: clamp(2.5rem, 6vw, 6rem);
+  }
+
+  .linea__hito {
+    grid-template-columns: 5rem minmax(0, 30rem) auto;
+    align-items: start;
+    column-gap: 2rem;
+  }
+
+  .linea__imagen {
+    margin-top: 0;
+  }
+
+  .concierto {
+    grid-template-columns: 8rem 1fr auto;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .concierto__dia {
+    display: block;
+    font-size: 3.25rem;
+  }
+
+  .pie {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Movimiento: el sol se pone una sola vez ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .portada__texto::before {
+    animation: ponerse-sol 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes ponerse-sol {
+    from {
+      opacity: 0;
+      transform: translateY(-95%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .boton {
+    transition: none;
+  }
+}
+
+kbd {
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--color-linea);
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-size: 0.9em;
+}

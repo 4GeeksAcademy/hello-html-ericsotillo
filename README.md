@@ -1,41 +1,45 @@
-# HTML Hello
+# Nilo Sur - Landing page de artista
 
-The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
+Landing page de una sola página para **Nilo Sur**, guitarrista y compositor ficticio de flamenco-jazz. Proyecto del módulo de HTML, CSS y SEO, hecho **solo con HTML y CSS** (sin JavaScript ni frameworks).
 
-> There is a video tutorial on [how to use this template to create your very first website here](https://youtu.be/dfbDCMu_p-0).
+## Dos versiones
 
-## What to do next?
+| Versión | Archivos | Estado |
+|---------|----------|--------|
+| Generada con IA | `index-IA.html` + `style-IA.css` | Terminada |
+| Escrita a mano | `index.html` + `styles.css` | En progreso |
 
-Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
+## Estructura
+
+```
+index-IA.html / style-IA.css   Versión IA
+index.html / styles.css        Versión manual
+img/                           Imágenes, logo y caricatura (créditos en img/CREDITOS.md)
+memory-bank/projectbrief.md    Contenido del artista y requisitos del proyecto
+lighthouse/                    Informes de Lighthouse (escritorio y móvil)
+```
+
+## Requisitos cubiertos
+
+- **Secciones:** portada, Sobre mí, Trayectoria y Próximas presentaciones, cada una del alto de la pantalla, con barra de navegación.
+- **HTML semántico:** `header`, `nav`, `main`, `section`, `article`, `footer`, `time`, `address`.
+- **Accesibilidad (WCAG 2.1 AA):** textos `alt`, `aria-label`, enlace para saltar al contenido, foco visible, contraste verificado, `prefers-reduced-motion` y atajos de teclado (`Alt` + `1`, `2`, `3`).
+- **SEO:** `title`, `meta description`, Open Graph y datos estructurados de Schema.org en JSON-LD (`Person`, `MusicEvent`, `MusicAlbum`).
+
+## Validación de la versión IA
+
+- W3C HTML: 0 errores. W3C CSS: 0 errores.
+- Schema.org Validator: 0 errores, 0 avisos.
+- Lighthouse: Accesibilidad 100 y SEO 100 en escritorio y móvil.
+
+## Ver la página
 
 ```bash
-$ pip3 install flask && python3 server.py
+pip3 install flask && python3 server.py
 ```
 
-- You can create as many HTML files as you want.
-- You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
+Abre `http://localhost:3000/index-IA.html` (versión IA) o `http://localhost:3000` (versión manual).
 
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
+## Créditos
 
-- If you want to use Tailwind CSS, add it optionally via the official Tailwind CSS v4 CDN inside the same `<head>`:
-
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
-
-### Contributors
-
-This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/html-hello/graphs/contributors).
-
-You can find other templates and resources like this at the [school's GitHub page](https://github.com/4geeksacademy/).
+Fotografías con licencia CC BY 2.0; autores y enlaces en [img/CREDITOS.md](img/CREDITOS.md). El artista, la banda y los eventos son ficticios.
