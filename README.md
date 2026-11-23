@@ -7,7 +7,7 @@ Landing page de una sola página para **Nilo Sur**, guitarrista y compositor fic
 | Versión | Archivos | Estado |
 |---------|----------|--------|
 | Generada con IA | `index-IA.html` + `style-IA.css` | Terminada |
-| Escrita a mano | `index.html` + `styles.css` | En progreso |
+| Escrita a mano | `index.html` + `styles.css` | Terminada |
 
 ## Estructura
 
@@ -26,11 +26,15 @@ lighthouse/                    Informes de Lighthouse (escritorio y móvil)
 - **Accesibilidad (WCAG 2.1 AA):** textos `alt`, `aria-label`, enlace para saltar al contenido, foco visible, contraste verificado, `prefers-reduced-motion` y atajos de teclado (`Alt` + `1`, `2`, `3`).
 - **SEO:** `title`, `meta description`, Open Graph y datos estructurados de Schema.org en JSON-LD (`Person`, `MusicEvent`, `MusicAlbum`).
 
-## Validación de la versión IA
+## Validación
+
+Versión IA:
 
 - W3C HTML: 0 errores. W3C CSS: 0 errores.
 - Schema.org Validator: 0 errores, 0 avisos.
 - Lighthouse: Accesibilidad 100 y SEO 100 en escritorio y móvil.
+
+Versión manual: W3C HTML y CSS con 0 errores, Schema.org con 0 errores y Lighthouse con Accesibilidad 100 y SEO 100 en escritorio y móvil.
 
 ## Ver la página
 
